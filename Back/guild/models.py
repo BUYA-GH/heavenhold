@@ -15,7 +15,7 @@ class Guild(models.Model):
 
 class GuildMember(models.Model):
     name = models.CharField(max_length=30)
-    guild = models.ForeignKey('Guild', on_delete=models.CASCADE)
+    guild = models.ForeignKey(Guild, on_delete=models.CASCADE)
 
     is_master = models.BooleanField(default=False)
     is_subMaster = models.BooleanField(default=False)

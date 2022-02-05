@@ -13,7 +13,7 @@ class UserAdmin(BaseUserAdmin):
     list_filter = ('is_admin',)
 
     fieldsets = (
-        (None, {'fields': ('email', 'username', 'gamecode')}),
+        (None, {'fields': ('email', 'username', 'gamecode', 'password')}),
         ('Guild Info', {'fields': ('guild', 'guild_member')}),
         ('Permissions', {'fields': ('is_admin', )})
     )

@@ -37,8 +37,8 @@ class User(AbstractBaseUser):
     username = models.CharField(max_length=30)
     gamecode = models.CharField(max_length=10, unique = True)
 
-    guild = models.ForeignKey('guild.Guild', blank = True, null = True, default = None, on_delete=models.SET_NULL)
-    guild_member = models.ForeignKey('guild.GuildMember', blank = True, null = True, default = None, on_delete=models.SET_NULL)
+    guild = models.ForeignKey('guild.Guild', blank = True, null = True, on_delete=models.SET_NULL)
+    guild_member = models.OneToOneField('guild.GuildMember', blank = True, null = True, on_delete=models.SET_NULL)
 
     is_active = models.BooleanField(default=True)
     is_admin = models.BooleanField(default=False)

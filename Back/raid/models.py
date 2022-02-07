@@ -49,6 +49,21 @@ class RaidInfo(models.Model):
     def __str__(self):
         return "round {0} : {1}".format(self.round, self.name)
 
+class GuildSetting(models.Model):
+    guild = models.ForeignKey('guild.Guild', on_delete=models.CASCADE)
+    raid = models.ForeignKey(RaidInfo, on_delete=models.CASCADE)
+
+    magnificationA = models.FloatField(default=1.0)
+    magnificationB = models.FloatField(default=1.0)
+    magnificationC = models.FloatField(default=1.0)
+    magnificationD = models.FloatField(default=1.0)
+
+    magnificationStartDate = models.DateField()
+    magnificationEndDate = models.DateField()
+
+    def __str__(self):
+        return "round {0} / {1}".format(self.guild, self.raid)
+
 class Damage(models.Model):
     raid = models.ForeignKey(RaidInfo, on_delete=models.CASCADE)
     date = models.DateField()

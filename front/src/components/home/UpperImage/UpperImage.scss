@@ -1,0 +1,17 @@
+@import 'utils';
+$assetPath : "../../../../public/img";
+
+.UpperImage {
+    height: 30rem;
+    width: 100vw;
+
+    text-align: center;
+    // align-items: center;
+    // justify-content: center;
+
+    background: url(#{$assetPath}/title.jpg) no-repeat;
+    background-size: cover;
+
+    font-size: 1.5rem;
+    font-weight: 600;
+}

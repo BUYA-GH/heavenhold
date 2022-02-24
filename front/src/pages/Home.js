@@ -1,12 +1,14 @@
 import React from 'react';
 import PageTemplate from 'components/common/PageTemplate';
-import UpperTitle from 'components/title/UpperImage';
-// import Header from 'components/common/Header';
+// import UpperImage from 'components/home/UpperImage';
+
+import { UpperImage, LowerDescription } from 'components/home'
 
 const Home = () => {
     return (
         <PageTemplate>
-            <UpperTitle/>
+            <UpperImage/>
+            <LowerDescription/>
         </PageTemplate>
     );
 };

@@ -1,7 +1,9 @@
 @import 'utils';
 
 .header {
-    background: $oc-gray-7;
+    background: $header-color;
+    position: sticky;
+    top: 0;
     
     .header-content {
         height: 5rem;
@@ -12,6 +14,7 @@
 
         display: flex;
         align-items: center;
+
 
         @include media("<wide") {
             width: 100%;
@@ -28,8 +31,13 @@
         }
 
         .right {
-            color: white;
+            color: rgba(255, 255, 255, 0.8);
             margin-left: auto;
+            font-weight: 600;
+            cursor: pointer;
+            &:hover {
+                color: white;
+            }
         }
     }
 }

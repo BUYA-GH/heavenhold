@@ -11,10 +11,10 @@ const Header = () => (
       <div className={cx('brand')}>
         <Link to="/">HeavenHold</Link>
       </div>
-      <div className={cx('right')}>
+      <Link to="/login/" className={cx('right')}>
         { }
-        right
-      </div>
+        Login
+      </Link>
     </div>
   </header>
 );

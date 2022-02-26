@@ -31,6 +31,7 @@ const LoginWindow = () => {
                     <p className={cx('InfoTitle')}>Welcome!</p>
                     <div className={cx('InfoText')}>
                         <p>서비스 사용을 위해서는 로그인이 필수입니다.</p>
+                        <p>길마들 화이팅!</p>
                         <p>일 안해!</p>
                     </div>
                 </div>

@@ -25,6 +25,13 @@ class UserCreationForm(forms.ModelForm):
             user.save()
         return user
 
+    def signup(self, request, user):
+        user.email = self.cleaned_data['email']
+        user.username = self.cleaned_data['username']
+        user.gamecode = self.cleaned_data['gamecode']
+        
+        user.save()
+
 class UserChangeForm(forms.ModelForm):
     password = ReadOnlyPasswordHashField()
 

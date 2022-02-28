@@ -67,13 +67,21 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.IsAuthenticated',
     ],
     'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.authentication.SessionAuthentication',
+        # 'rest_framework.authentication.SessionAuthentication',
         'rest_framework.authentication.TokenAuthentication',
     ]
 }
 
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+REST_AUTH_REGISTER_SERIALIZERS = {
+    'REGISTER_SERIALIZER': 'user.serializers.MyRegisterSerializer',
+}
+
 ACCOUNT_AUTHENTICATION_METHOD = "email"
-ACCOUNT_SIGNUP_FORM_CLASS = 'user.forms.UserCreationForm'
+# ACCOUNT_FORMS = { 'signup': 'user.forms.RegistrationForm',}
+# ACCOUNT_SIGNUP_FORM_CLASS = 'user.forms.RegistrationForm'
+ACCOUNT_ADAPTER = "user.adapter.AccountAdapter"
 
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_UNIQUE_EMAIL = True

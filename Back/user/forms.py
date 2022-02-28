@@ -25,12 +25,19 @@ class UserCreationForm(forms.ModelForm):
             user.save()
         return user
 
-    def signup(self, request, user):
-        user.email = self.cleaned_data['email']
-        user.username = self.cleaned_data['username']
-        user.gamecode = self.cleaned_data['gamecode']
-        
-        user.save()
+# class RegistrationForm(UserCreationForm):
+#     gamecode = forms.CharField(max_length=10)
+
+#     class Meta:
+#         model = User
+#         fields = ('email', 'username', 'gamecode', 'guild', 'guild_member')
+
+#     def signup(self, request, user):
+#         user.email = self.cleaned_data['email']
+#         user.username = self.cleaned_data['username']
+#         user.gamecode = self.cleaned_data['gamecode']
+#         user.save()
+#         return user
 
 class UserChangeForm(forms.ModelForm):
     password = ReadOnlyPasswordHashField()

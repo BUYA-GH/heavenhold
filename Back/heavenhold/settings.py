@@ -67,7 +67,6 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.IsAuthenticated',
     ],
     'DEFAULT_AUTHENTICATION_CLASSES': [
-        # 'rest_framework.authentication.SessionAuthentication',
         'rest_framework.authentication.TokenAuthentication',
     ]
 }
@@ -79,8 +78,6 @@ REST_AUTH_REGISTER_SERIALIZERS = {
 }
 
 ACCOUNT_AUTHENTICATION_METHOD = "email"
-# ACCOUNT_FORMS = { 'signup': 'user.forms.RegistrationForm',}
-# ACCOUNT_SIGNUP_FORM_CLASS = 'user.forms.RegistrationForm'
 ACCOUNT_ADAPTER = "user.adapter.AccountAdapter"
 
 ACCOUNT_EMAIL_REQUIRED = True

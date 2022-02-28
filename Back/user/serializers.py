@@ -1,4 +1,3 @@
-from wsgiref.validate import validator
 from rest_framework import serializers
 from rest_auth.registration.serializers import RegisterSerializer
 from allauth.account.adapter import get_adapter

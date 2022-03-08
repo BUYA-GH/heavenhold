@@ -3,20 +3,27 @@ import styles from './Header.scss';
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
 
+import { useDispatch } from 'react-redux';
+import { toggleMenu } from 'slices/TabSlice'
+
 const cx = classNames.bind(styles);
 
-const Header = () => (
-  <header className={cx('header')}>
-    <div className={cx('header-content')}>
-      <div className={cx('brand')}>
-        <Link to="/">HeavenHold</Link>
+const Header = () => {
+  const dispatch = useDispatch();
+  const onMenuToggle = () => {
+    dispatch(toggleMenu());
+  }
+
+  return (
+    <header className={cx('Header')}>
+      <button className={cx('icon-tab')} type="button" onClick={onMenuToggle} />
+      <div className={cx('breadcomb')}>
+        HeavenHold
       </div>
-      <Link to="/login/" className={cx('right')}>
-        { }
-        Login
-      </Link>
-    </div>
-  </header>
-);
+      <Link to="/login/" className={cx('icon-user')} />
+    </header>
+  )
+  
+}
 
 export default Header;

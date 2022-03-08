@@ -23,15 +23,28 @@ $assetPath : "../../../../public/img";
         .LoginForm {
             width: 60%;
             background: white;
-            padding: 0% 10% ;
+            padding: 0% 10%;
             display: flex;
             justify-content: center;
             flex-direction: column;
             align-items: center;
 
             .Title {
+                margin: 1rem 0rem;
                 font-size: 2rem;
                 font-weight: 700;
+            }
+
+            .warningMesseage {
+                width: 100%;
+                height: 2rem;
+                line-height: 2rem;
+
+                text-align: center;
+                font-size: 12px;
+                color: $fire-color;
+                background: #EEEEEE;
+                border-radius: 5px;
             }
 
             .textInput {
@@ -42,7 +55,6 @@ $assetPath : "../../../../public/img";
                 border: 1px solid #e5e5e5;
                 padding: 9px 12px;
                 outline: none;
-                box-sizing: border-box;
             }
 
             .LoginMid {

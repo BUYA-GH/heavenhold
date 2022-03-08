@@ -3,7 +3,9 @@ import PageTemplate from 'components/common/PageTemplate';
 
 const Main = () => {
     return (
-        <PageTemplate/>
+        <PageTemplate>
+            
+        </PageTemplate>
     );
 };
 

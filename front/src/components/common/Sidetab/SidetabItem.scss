@@ -1,0 +1,77 @@
+@import 'utils';
+
+.tabItem {
+    position: relative;
+    width: 250px;
+    height: 70px;
+
+    border-radius: 7px;
+    background: $sidetab-item-color;
+
+    margin: 10px 0;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    .arrowDownIcon {
+        position: absolute;
+        background: url(#{$assetPath}/Chevron_Down.png) no-repeat;
+        width: 20px;
+        height: 20px;
+
+        left: 10px;
+        top: 25px;
+
+        border: 0;
+        padding: 0;
+    }
+
+    .tabIcon {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+
+        left: 40px;
+        top: 15px;
+
+        border: 0;
+        padding: 0;
+    }
+
+    .tabText {
+        position: absolute;
+        width: 140px;
+        height: 24px;
+
+        left: 100px;
+        top: 23px;
+
+        font-style: normal;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 35px;
+        display: flex;
+        align-items: center;
+
+        color: #FFFFFF;
+    }
+}
+
+.subItemField {
+    background: #4B6785;
+    width: 260px;
+    border-radius: 7px;
+
+    margin-top: -80px;
+    padding-top: 70px;
+
+    display: inline-block;
+
+    .subItemLine {
+        position: relative;
+        width: 180px;
+        height: 100%;
+        left: 60px;
+    }
+}

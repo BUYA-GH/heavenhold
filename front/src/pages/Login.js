@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { LoginWindow } from 'components/login/Login'
+import { LoginWindow } from 'components/auth'
 
 const Login = () => {
     return (

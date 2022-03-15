@@ -2,6 +2,8 @@ import React from 'react';
 import styles from './Sidetab.scss';
 import classNames from 'classnames/bind';
 import { useSelector } from 'react-redux';
+import { SidetabItemData } from './SidetabItemData'
+import SidetabItem from './SidetabItem';
 
 const cx = classNames.bind(styles);
 
@@ -11,24 +13,12 @@ const Sidetab = () => {
     return(
         <div className={cx('Sidetab', isMenuOpen && 'open')}>
             <div className={cx('tabItemLine')}>
-                <div className={cx('tabItem')}>
-                    <div className={cx('arrowDownIcon')}/>
-                    <img className={cx('tabIcon')} src='/img/Users_Group.png' alt="usergroup"/>
-                    <div className={cx('tabText')}>
-                        길드
-                    </div>
-                </div>
-                <div className={cx('tabItem')}>
-                    <div className={cx('arrowDownIcon')}/>
-                    <img className={cx('tabIcon')} src='/img/Users_Group.png' alt="usergroup"/>
-                    <div className={cx('tabText')}>
-                        콜로세움
-                    </div>
-                </div>
+                { SidetabItemData.map((item, index) => {
+                    return <SidetabItem item={item} key={index} />;
+                })}
             </div>
         </div>
-    )
+    );
 }
-
 
 export default Sidetab;

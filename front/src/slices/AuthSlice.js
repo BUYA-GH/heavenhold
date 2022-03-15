@@ -4,13 +4,14 @@ const token = localStorage.getItem("user");
 
 export const register = createAsyncThunk(
     "auth/register",
-    async( {email, username, gamecode, pw1, pw2 }, thunkAPI) => {
+    async( {email, gamecode, pw1, pw2 }, thunkAPI) => {
         try {
-            const response = await authAPI.register(username, email, gamecode, pw1, pw2);
+            const response = await authAPI.postSignup(email, gamecode, pw1, pw2);
             console.log("response from register : ", response);
             return response;
         } catch (error) {
             console.error(error);
+            return thunkAPI.rejectWithValue(error.response.data);
         }
     }
 );
@@ -25,11 +26,25 @@ export const login = createAsyncThunk(
             }   
         } catch (error) {
             localStorage.removeItem("user");
-            return thunkAPI.rejectWithValue();
+            return thunkAPI.rejectWithValue(error.response.data);
         }
         
     }
 );
+
+export const logout = createAsyncThunk(
+    "auth/logout",
+    async(thunkAPI) => {
+        try {
+            const data = await authAPI.postLogout();
+            console.log("at slice ", data);
+            return data;
+        } catch (error) {
+            console.error(error);
+            return thunkAPI.rejectWithValue(error.response.data);
+        }
+    }
+)
 
 const initialState = token
     ? { isLoggedIn : true, token: token, isLoginFail: false }
@@ -49,12 +64,22 @@ const authSlice = createSlice({
             state.isLoggedIn = true;
             state.isLoginFail = false;
             state.token = action.payload.token;
+
         },
         [login.rejected]: (state, action) => {
             state.isLoggedIn = false;
             state.isLoginFail = true;
             state.token = null;
         },
+        [logout.fulfilled]: (state, action) => {
+            state.isLoggedIn = false;
+            state.isLoginFail = false;
+            state.token = null;
+        },
+        [logout.rejected]: (state, action) => {
+            state.isLoggedIn = true;
+            state.isLoginFail = false;
+        }
     },
 });
 const { reducer } = authSlice;

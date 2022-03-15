@@ -9,11 +9,11 @@ class UserAdmin(BaseUserAdmin):
     form = UserChangeForm
     add_form = UserCreationForm
 
-    list_display = ('email', 'username', 'gamecode', 'guild', 'guild_member', 'is_admin')
+    list_display = ('email', 'gamecode', 'guild', 'guild_member', 'is_admin')
     list_filter = ('is_admin',)
 
     fieldsets = (
-        (None, {'fields': ('email', 'username', 'gamecode', 'password')}),
+        (None, {'fields': ('email', 'gamecode', 'password')}),
         ('Guild Info', {'fields': ('guild', 'guild_member')}),
         ('Permissions', {'fields': ('is_admin', )})
     )
@@ -21,10 +21,10 @@ class UserAdmin(BaseUserAdmin):
     add_fieldsets = (
         (None, {
             'classes': ('wide',),
-            'fields': ('email', 'username', 'gamecode', 'guild', 'guild_member', 'password1', 'password2')}
+            'fields': ('email', 'gamecode', 'guild', 'guild_member', 'password1', 'password2')}
         ),
     )
-    search_fields = ('email', 'username', 'gamecode')
+    search_fields = ('email', 'gamecode')
     ordering = ('email',)
     filter_horizontal = ()
 

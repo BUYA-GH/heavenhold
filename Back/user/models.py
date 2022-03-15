@@ -2,17 +2,14 @@ from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 from django.db import models
 
 class UserManager(BaseUserManager):
-    def create_user(self, email, username, gamecode, password = None):
+    def create_user(self, email, gamecode, password = None):
         if not email:
             raise ValueError('must have user email')
-        if not username:
-            raise ValueError('must have user name')
         if not gamecode:
             raise ValueError('must have user code')
 
         user = self.model(
             email=self.normalize_email(email),
-            username=username,
             gamecode=gamecode
         )
 
@@ -20,10 +17,9 @@ class UserManager(BaseUserManager):
         user.save(using=self._db)
         return user
 
-    def create_superuser(self, email, username, gamecode, password):
+    def create_superuser(self, email, gamecode, password):
         user = self.create_user(
             email=self.normalize_email(email),
-            username=username,
             gamecode=gamecode,
             password=password
         )
@@ -34,7 +30,6 @@ class UserManager(BaseUserManager):
 # Create your models here.
 class User(AbstractBaseUser):
     email = models.EmailField(max_length = 255, unique = True)
-    username = models.CharField(max_length=30)
     gamecode = models.CharField(max_length=10, unique = True)
 
     guild = models.ForeignKey('guild.Guild', blank = True, null = True, on_delete=models.SET_NULL)
@@ -46,10 +41,10 @@ class User(AbstractBaseUser):
     objects = UserManager()
 
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['username', 'gamecode']
+    REQUIRED_FIELDS = ['gamecode',]
 
     def __str__(self):
-        return self.username
+        return self.email + " / " + self.gamecode
         
     def has_perm(self, perm, obj=None):
         return True

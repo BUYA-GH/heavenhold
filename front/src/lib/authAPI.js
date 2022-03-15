@@ -7,20 +7,19 @@ const headers = {
     'Content-Type': 'application/json',
 };
 
-const postSignup = async(email, username, gamecode, pw1, pw2) => {
-    try {
-        const response = await axios.post(`${baseUrl}/rest-auth/registration/`, {
-            email: email,
-            username: username,
-            gamecode: gamecode,
-            password1: pw1,
-            password2: pw2
-        });
-        console.log(response);
-        return response;
-    } catch(err) {
-        console.error("Api Error | postSignup : ", err);
-    }
+const postSignup = async(email, gamecode, pw1, pw2) => {
+    return await axios.post(`${baseUrl}/rest-auth/registration/`, {
+        email: email,
+        gamecode: gamecode,
+        password1: pw1,
+        password2: pw2
+    }, {
+        headers: headers
+    })
+    .then(response => {
+        console.log(response.data.key);
+        return response.data;
+    });
 }
 
 const postLogin = async (email, password) => {
@@ -39,8 +38,21 @@ const postLogin = async (email, password) => {
     });
 }
 
+const postLogout = async () => {
+    return await axios.post(`${baseUrl}/rest-auth/logout/`, {
+
+    },{
+        headers: headers
+    })
+    .then(response => {
+        localStorage.removeItem("user");
+        return response.data;
+    })
+}
+
 const authAPI = {
     postSignup,
-    postLogin
+    postLogin,
+    postLogout
 };
 export default authAPI;

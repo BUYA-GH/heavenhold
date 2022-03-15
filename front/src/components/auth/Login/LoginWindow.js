@@ -2,26 +2,34 @@ import React from 'react';
 import styles from './LoginWindow.scss';
 import classNames from 'classnames/bind';
 
+import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useFormik } from 'formik';
 import { login } from 'slices/AuthSlice'
 
 const cx = classNames.bind(styles);
 
-const LoginWindow = () => {
+const LoginWindow = (props) => {
     // useSelector는 state 접근
     const { isLoggedIn, isLoginFail } = useSelector((state) => state.auth); 
     // useDispatch는 action 접근
     const dispatch = useDispatch();
+
+    const navigate = useNavigate();
 
     const initialValues = {
         email: '',
         password: ''
     }
 
-    const onLogin = (values) => {
+    const onLogin = async (values) => {
         const { email, password } = values;
-        dispatch(login({email, password}));
+        dispatch(login({email, password}))
+            .unwrap()
+            .then(() => {
+                navigate('/main/');
+            })
+            .catch((e)=> console.error(e));
     }
 
     const formik = useFormik({

@@ -12,11 +12,10 @@ const PageTemplate = ({children}) => {
     return (
         <div className={cx('page-template')}>
             <Header />
-            <Sidetab />
             <main>
+                <Sidetab />
                 {children}
             </main>
-            {/* <Footer/> */}
         </div>
     )
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import PageTemplate from 'components/common/PageTemplate';
 
-const Main = () => {
+const Profile = () => {
     return (
         <PageTemplate>
             
@@ -9,4 +9,4 @@ const Main = () => {
     );
 };
 
-export default Main;
+export default Profile;

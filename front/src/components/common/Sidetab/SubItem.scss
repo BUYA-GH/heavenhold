@@ -10,6 +10,10 @@
 
     margin: 10px 0;
 
+    &.open {
+        background: white;
+    }
+
     .tabIcon {
         position: absolute;
         width: 24px;
@@ -20,6 +24,10 @@
 
         border: 0;
         padding: 0;
+
+        &.open {
+            fill: #64798F;
+        }
     }
 
     .tabText {
@@ -38,5 +46,9 @@
         align-items: center;
 
         color: #FFFFFF;
+
+        &.open {
+            color: #64798F;
+        }
     }
 }

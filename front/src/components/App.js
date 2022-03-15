@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { Home, Login, Main, Signup } from 'pages';
+import { Home, Login, Profile, Signup } from 'pages';
 
 const App = () => {
     return (
@@ -9,7 +9,7 @@ const App = () => {
                 <Route path="/" element={<Home />}/>
                 <Route path="/login" element={<Login />}/>
                 <Route path="/signup" element={<Signup />}/>
-                <Route path="/main" element={<Main />}/>
+                <Route path="/myinfo/profile" element={<Profile />}/>
             </Routes>
         </div>
     );

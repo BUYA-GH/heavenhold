@@ -44,8 +44,13 @@ export const SidetabItemData = [
 
         subItem: [
             {
-                title: "테스트",
-                path: "/myinfo/text",
+                title: "프로필",
+                path: "/myinfo/profile",
+                iconsrc: "/img/Users_Group.png",
+            },
+            {
+                title: "유저 연결",
+                path: "/myinfo/userconnect",
                 iconsrc: "/img/Users_Group.png",
             }
         ]

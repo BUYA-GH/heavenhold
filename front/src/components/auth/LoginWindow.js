@@ -27,7 +27,7 @@ const LoginWindow = () => {
         dispatch(login({email, password}))
             .unwrap()
             .then(() => {
-                navigate('/main/');
+                navigate('/myinfo/profile');
             })
             .catch((e)=> console.error(e));
     }

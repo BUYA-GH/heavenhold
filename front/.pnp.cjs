@@ -68,6 +68,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["jest-resolve", "npm:27.5.1"],\
             ["jest-watch-typeahead", "virtual:0487b1b8263ee74b6a800d7d32396247265bb66793913170b66fbaba014393ed5e7147a33f4bbb04ae9c659e18794d2a28c1045211d073c2ec3f37a52f31b1e7#npm:1.0.0"],\
             ["mini-css-extract-plugin", "virtual:0487b1b8263ee74b6a800d7d32396247265bb66793913170b66fbaba014393ed5e7147a33f4bbb04ae9c659e18794d2a28c1045211d073c2ec3f37a52f31b1e7#npm:2.5.3"],\
+            ["node-forge", "npm:1.3.0"],\
             ["node-sass", "npm:7.0.1"],\
             ["open-color", "npm:1.9.1"],\
             ["postcss", "npm:8.4.6"],\
@@ -9012,6 +9013,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["jest-resolve", "npm:27.5.1"],\
             ["jest-watch-typeahead", "virtual:0487b1b8263ee74b6a800d7d32396247265bb66793913170b66fbaba014393ed5e7147a33f4bbb04ae9c659e18794d2a28c1045211d073c2ec3f37a52f31b1e7#npm:1.0.0"],\
             ["mini-css-extract-plugin", "virtual:0487b1b8263ee74b6a800d7d32396247265bb66793913170b66fbaba014393ed5e7147a33f4bbb04ae9c659e18794d2a28c1045211d073c2ec3f37a52f31b1e7#npm:2.5.3"],\
+            ["node-forge", "npm:1.3.0"],\
             ["node-sass", "npm:7.0.1"],\
             ["open-color", "npm:1.9.1"],\
             ["postcss", "npm:8.4.6"],\
@@ -12052,10 +12054,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["node-forge", [\
-        ["npm:1.2.1", {\
-          "packageLocation": "./.yarn/cache/node-forge-npm-1.2.1-d6686e8063-af4f88c3f6.zip/node_modules/node-forge/",\
+        ["npm:1.3.0", {\
+          "packageLocation": "./.yarn/cache/node-forge-npm-1.3.0-17da5aca4f-3d8124168d.zip/node_modules/node-forge/",\
           "packageDependencies": [\
-            ["node-forge", "npm:1.2.1"]\
+            ["node-forge", "npm:1.3.0"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -15562,7 +15564,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/selfsigned-npm-2.0.0-46f0f62731-43fca39a5a.zip/node_modules/selfsigned/",\
           "packageDependencies": [\
             ["selfsigned", "npm:2.0.0"],\
-            ["node-forge", "npm:1.2.1"]\
+            ["node-forge", "npm:1.3.0"]\
           ],\
           "linkType": "HARD"\
         }]\

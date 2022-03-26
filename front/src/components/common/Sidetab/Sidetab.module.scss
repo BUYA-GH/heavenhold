@@ -1,22 +1,22 @@
 @import 'utils';
 
 .Sidetab {
-    position: absolute;
     width: 300px;
-    height: calc(100vh - 100px);
-    left: -300px;
+    min-height: calc(100vh - 100px);
+    // left: -300px;
+    margin-left: -300px;
 
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
+    // -webkit-transform: translateX(0);
+    // transform: translateX(0);
     -webkit-transition: .3s ease all;
     transition: .3s ease all;
     &.open {
-        -webkit-transform: translateX(300px);
-        transform: translateX(300px);
+        // -webkit-transform: translateX(300px);
+        // transform: translateX(300px);
+        margin-left: 0px;
     }
 
     background: $sidetab-color;
-
     .tabItemLine {
         position: relative;
         width: 250px;

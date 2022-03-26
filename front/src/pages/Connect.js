@@ -1,14 +1,14 @@
 import React from 'react';
 import PageTemplate from 'components/common/PageTemplate';
 
-import { ProfileWindow } from 'components/myinfo'
+import { ConnectWindow } from 'components/myinfo'
 
-const Profile = () => {
+const Connect = () => {
     return (
         <PageTemplate>
-            <ProfileWindow />
+            <ConnectWindow />
         </PageTemplate>
     );
 };
 
-export default Profile;
+export default Connect;

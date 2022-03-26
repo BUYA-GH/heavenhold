@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './AuthStyle.scss';
+import styles from './AuthStyle.module.scss';
 import classNames from 'classnames/bind';
 
 import { Link, useNavigate } from 'react-router-dom';
@@ -39,7 +39,7 @@ const LoginWindow = () => {
 
     return (
         <div className={cx('Wrapper')}>
-            <div className={cx('AuthComp')}>
+            <div className={cx('Window')}>
                 <div className={cx('Form')}>
                     <p className={cx('Title')}>
                         Login

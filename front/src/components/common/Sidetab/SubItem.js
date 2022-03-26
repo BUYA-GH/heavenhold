@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './SubItem.scss';
+import styles from './SubItem.module.scss';
 import classNames from 'classnames/bind';
 import { Link, useLocation } from 'react-router-dom';
 

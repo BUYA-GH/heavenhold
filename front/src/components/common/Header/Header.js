@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Header.scss';
+import styles from './Header.module.scss';
 import classNames from 'classnames/bind';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';

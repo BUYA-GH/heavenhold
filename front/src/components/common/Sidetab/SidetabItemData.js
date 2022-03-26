@@ -50,7 +50,7 @@ export const SidetabItemData = [
             },
             {
                 title: "유저 연결",
-                path: "/myinfo/userconnect",
+                path: "/myinfo/connect",
                 iconsrc: "/img/Users_Group.png",
             }
         ]

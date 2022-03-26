@@ -1,0 +1,21 @@
+@import 'utils';
+
+.Wrapper {
+    position: relative;
+    min-height: calc(100vh - 100px);
+    background: $pageback-color;
+    flex: 1;
+
+    .Window {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+
+        height: 90%;
+        width: 90%;
+
+        background: #FFFFFF;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    }
+}

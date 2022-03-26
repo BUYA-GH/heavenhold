@@ -12,7 +12,7 @@ const Home = () => {
     useEffect(() => {
         console.log(token);
         if(token) {
-            navigate('/main');
+            navigate('/myinfo/profile');
         }
     });
 

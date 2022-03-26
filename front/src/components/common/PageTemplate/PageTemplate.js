@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './PageTemplate.scss';
+import styles from './PageTemplate.module.scss';
 import classNames from 'classnames/bind';
 
 import Header from 'components/common/Header';

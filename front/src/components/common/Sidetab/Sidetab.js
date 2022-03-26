@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Sidetab.scss';
+import styles from './Sidetab.module.scss';
 import classNames from 'classnames/bind';
 import { useSelector } from 'react-redux';
 import { SidetabItemData } from './SidetabItemData'

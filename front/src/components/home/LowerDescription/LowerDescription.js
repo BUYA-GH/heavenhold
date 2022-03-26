@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './LowerDescription.scss';
+import styles from './LowerDescription.module.scss';
 import classNames from 'classnames/bind';
 
 const cx = classNames.bind(styles);

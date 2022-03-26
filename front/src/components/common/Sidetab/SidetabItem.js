@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from './SidetabItem.scss';
+import styles from './SidetabItem.module.scss';
 import classNames from 'classnames/bind';
 import SubItem from './SubItem';
 

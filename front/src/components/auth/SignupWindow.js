@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './AuthStyle.scss';
+import styles from './AuthStyle.module.scss';
 import classNames from 'classnames/bind';
 
 import { useNavigate } from 'react-router-dom';

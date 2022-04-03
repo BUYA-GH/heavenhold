@@ -17,5 +17,18 @@
 
         background: #FFFFFF;
         box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
+        .Form {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+
+            .Select {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
     }
 }

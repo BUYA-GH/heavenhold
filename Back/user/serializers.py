@@ -11,7 +11,6 @@ class MyRegisterSerializer(RegisterSerializer):
 
     def validate_gamecode(self, gamecode):
         record = User.objects.filter(gamecode=gamecode).first()
-        print(record)
         if record:
             raise serializers.ValidationError(
                 _("A user is already registered with this game code"))

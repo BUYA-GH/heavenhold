@@ -1,11 +1,16 @@
 import React from 'react';
-import { Outlet } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
+import { Profile, Connect } from "pages"
 
 const MyInfo = () => {
     return (
-        <div>
-            <Outlet />
-        </div>
+        <Routes>
+            <Route path="profile" element={<Profile />}/>
+            <Route path="connect/*">
+                <Route path=":id" element={<Connect />}/>
+            </Route>
+        </Routes>
+
     );
 };
 

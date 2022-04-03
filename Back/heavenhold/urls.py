@@ -16,8 +16,19 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from rest_framework import routers
+from guild.views import guild_generate_api_view, member_search_api_view, member_connect_api_view, GuildViewSet, GuildMemberViewSet
+
+router = routers.DefaultRouter()
+router.register('guild', GuildViewSet)
+router.register('member', GuildMemberViewSet)
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('rest-auth/', include('rest_auth.urls')),
     path('rest-auth/registration/', include('rest_auth.registration.urls')),
+    path("guild/generate/", guild_generate_api_view),
+    path("member/search/", member_search_api_view),
+    path("member/connect/", member_connect_api_view),
+    path('', include(router.urls)),
 ]
